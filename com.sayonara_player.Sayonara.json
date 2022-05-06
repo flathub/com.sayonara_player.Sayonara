@@ -1,7 +1,7 @@
 {
     "app-id": "com.sayonara_player.Sayonara",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15",
+    "runtime-version": "5.15-21.08",
     "sdk": "org.kde.Sdk",
     "command": "sayonara",
     "finish-args": [
@@ -20,6 +20,17 @@
     "rename-desktop-file": "com.sayonara-player.Sayonara.desktop",
     "rename-icon": "sayonara",
     "modules": [
+        {
+            "buildsystem": "autotools",
+            "name": "ffmpeg",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://ffmpeg.org/releases/ffmpeg-5.0.1.tar.xz",
+                    "sha256": "ef2efae259ce80a240de48ec85ecb062cecca26e4352ffb3fda562c21a93007b" 
+                }
+            ]
+        },
         {
             "buildsystem": "autotools",
             "name": "soundtouch",
@@ -43,131 +54,21 @@
                 "-Dgobject-cast-checks=disabled",
                 "-Dglib-asserts=disabled",
                 "-Dglib-checks=disabled",
-                "-Dextra-checks=disabled"
+                "-Dextra-checks=disabled",
+                "-Dbase=enabled",
+                "-Dgood=enabled",
+                "-Dbad=enabled",
+                "-Dugly=enabled",
+                "-Dlibav=enabled"
             ],
             "buildsystem": "meson",
             "name": "gstreamer",
             "sources": [
                 {
-                    "commit": "b4ca58df7624b005a33e182a511904d7cceea890",
-                    "tag": "1.19.2",
+                    "commit": "8dbfc89a850d484a27937eb882978251bfce06b3",
+                    "tag": "1.20.2",
                     "type": "git",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git"
-                }
-            ]
-        },
-        {
-            "config-opts": [
-                "--buildtype=release",
-                "--wrap-mode=nofallback",
-                "-Ddoc=disabled",
-                "-Dexamples=disabled",
-                "-Dtests=disabled",
-                "-Dnls=disabled",
-                "-Dgobject-cast-checks=disabled",
-                "-Dglib-asserts=disabled",
-                "-Dglib-checks=disabled",
-                "-Dplayback=enabled"
-            ],
-            "buildsystem": "meson",
-            "name": "gstreamer-plugins-base",
-            "sources": [
-                {
-                    "commit": "ce937bcb21412d7b3539a2da0509cc96260562f8",
-                    "tag": "1.19.2",
-                    "type": "git",
-                    "url": "https://gitlab.freedesktop.org/gstreamer/gst-plugins-base.git"
-                }
-            ]
-        },
-        {
-            "config-opts": [
-                "--buildtype=release",
-                "-Ddoc=disabled",
-                "-Dexamples=disabled",
-                "-Dtests=disabled",
-                "-Dnls=disabled",
-                "-Dgobject-cast-checks=disabled",
-                "-Dglib-asserts=disabled",
-                "-Dglib-checks=disabled"
-            ],
-            "buildsystem": "meson",
-            "name": "gstreamer-plugins-good",
-            "sources": [
-                {
-                    "commit": "20bbeb5e37666c53c254c7b08470ad8a00d97630",
-                    "tag": "1.19.2",
-                    "type": "git",
-                    "url": "https://gitlab.freedesktop.org/gstreamer/gst-plugins-good.git"
-                }
-            ]
-        },
-        {
-            "config-opts": [
-                "--buildtype=release",
-                "-Ddoc=disabled",
-                "-Dexamples=disabled",
-                "-Dtests=disabled",
-                "-Dnls=disabled",
-                "-Dgobject-cast-checks=disabled",
-                "-Dglib-asserts=disabled",
-                "-Dglib-checks=disabled",
-                "-Dextra-checks=disabled",
-                "-Dflite=disabled",
-                "-Dsoundtouch=enabled",
-                "-Dasfmux=enabled"
-            ],
-            "buildsystem": "meson",
-            "name": "gstreamer-plugins-bad",
-            "sources": [
-                {
-                    "commit": "ca8068c6d793d7aaa6f2e2cc6324fdedfe2f33fa",
-                    "tag": "1.19.2",
-                    "type": "git",
-                    "url": "https://gitlab.freedesktop.org/gstreamer/gst-plugins-bad.git"
-                }
-            ]
-        },
-        {
-            "config-opts": [
-                "--buildtype=release",
-                "-Ddoc=disabled",
-                "-Dnls=disabled",
-                "-Dtests=disabled",
-                "-Dgobject-cast-checks=disabled",
-                "-Dglib-asserts=disabled",
-                "-Dglib-checks=disabled"
-            ],
-            "buildsystem": "meson",
-            "name": "gstreamer-plugins-ugly",
-            "sources": [
-                {
-                    "commit": "499d3cd726a4ca9cbbdd4b4fe9ccdca78ef538ba",
-                    "tag": "1.19.2",
-                    "type": "git",
-                    "url": "https://gitlab.freedesktop.org/gstreamer/gst-plugins-ugly.git"
-                }
-            ]
-        },
-        {
-            "config-opts": [
-                "--buildtype=release",
-                "-Ddoc=disabled",
-                "-Dnls=disabled",
-                "-Dtests=disabled",
-                "-Dgobject-cast-checks=disabled",
-                "-Dglib-asserts=disabled",
-                "-Dglib-checks=disabled",
-                "-Dwmalossless=enabled"
-            ],
-            "buildsystem": "meson",
-            "name": "gst-libav",
-            "sources": [
-                {
-                    "commit": "4f649c9556ce5b4501363885995554598303e01c",
-                    "tag": "1.19.2",
-                    "type": "git",
-                    "url": "https://gitlab.freedesktop.org/gstreamer/gst-libav.git"
                 }
             ]
         },
