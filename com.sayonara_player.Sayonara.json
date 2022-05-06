@@ -10,7 +10,9 @@
         "add-ld-path": "."
       }
     },
-  
+    "cleanup-commands": [
+        "mkdir -p /app/lib/ffmpeg"
+    ],  
     "command": "sayonara",
     "finish-args": [
         "--share=ipc",
