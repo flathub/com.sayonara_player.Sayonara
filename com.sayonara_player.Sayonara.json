@@ -12,7 +12,7 @@
     },
     "cleanup-commands": [
         "mkdir -p /app/lib/ffmpeg"
-    ],  
+    ],
     "command": "sayonara",
     "finish-args": [
         "--share=ipc",
@@ -23,7 +23,7 @@
         "--talk-name=org.freedesktop.Notifications",
         "--talk-name=org.mpris.MediaPlayer2.Player",
         "--own-name=org.mpris.MediaPlayer2.sayonara",
-        "--own-name=org.kde.*",
+        "--talk-name=org.kde.StatusNotifierWatcher",
         "--device=all"
     ],
     "rename-appdata-file": "sayonara.appdata.xml",
