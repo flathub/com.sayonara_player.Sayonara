@@ -97,10 +97,6 @@
                     "type": "git",
                     "url": "https://gitlab.com/luciocarreras/sayonara-player.git",
                     "tag": "1.10.0-stable1"
-                },
-                {
-                    "type": "patch",
-                    "path": "appid-naming-convention.patch"
                 }
             ]
         }
