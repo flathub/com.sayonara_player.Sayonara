@@ -23,7 +23,7 @@
         "--talk-name=org.freedesktop.Notifications",
         "--talk-name=org.mpris.MediaPlayer2.Player",
         "--own-name=org.mpris.MediaPlayer2.sayonara",
-        "--talk-name=org.kde.StatusNotifierWatcher",
+        "--talk-name=org.kde.StatusNotifierWatcher",    
         "--device=all"
     ],
     "rename-appdata-file": "sayonara.appdata.xml",
@@ -62,8 +62,8 @@
             "name": "gstreamer",
             "sources": [
                 {
-                    "commit": "8dbfc89a850d484a27937eb882978251bfce06b3",
-                    "tag": "1.20.2",
+                    "commit": "3c66f10e218ec93a11e93f7c0bd209036c867a7a",
+                    "tag": "1.24.5",
                     "type": "git",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git"
                 }
@@ -93,10 +93,10 @@
             ],
             "sources": [
                 {
-                    "commit": "18e63ab31da929ebfa4d7f21791039997a567b49",
+                    "commit": "e5e5dfc5a35f793a3da83d087d1c0f9e6ea3dba6",
                     "type": "git",
                     "url": "https://gitlab.com/luciocarreras/sayonara-player.git",
-                    "tag": "1.7.0-stable3"
+                    "tag": "1.9.0-stable1"
                 },
                 {
                     "type": "patch",
