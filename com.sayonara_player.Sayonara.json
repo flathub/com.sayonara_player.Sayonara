@@ -26,7 +26,7 @@
         "--talk-name=org.kde.StatusNotifierWatcher",    
         "--device=all"
     ],
-    "rename-appdata-file": "sayonara.appdata.xml",
+    "rename-appdata-file": "com.sayonara-player.Sayonara.appdata.xml",
     "rename-desktop-file": "com.sayonara-player.Sayonara.desktop",
     "rename-icon": "sayonara",
     "modules": [
