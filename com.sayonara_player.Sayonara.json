@@ -1,12 +1,12 @@
 {
     "app-id": "com.sayonara_player.Sayonara",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-22.08",
+    "runtime-version": "5.15-23.08",
     "sdk": "org.kde.Sdk",
     "add-extensions": {
       "org.freedesktop.Platform.ffmpeg-full": {
         "directory": "lib/ffmpeg",
-        "version": "21.08",
+        "version": "24.08",
         "add-ld-path": "."
       }
     },
@@ -23,10 +23,10 @@
         "--talk-name=org.freedesktop.Notifications",
         "--talk-name=org.mpris.MediaPlayer2.Player",
         "--own-name=org.mpris.MediaPlayer2.sayonara",
-        "--own-name=org.kde.*",
+        "--talk-name=org.kde.StatusNotifierWatcher",    
         "--device=all"
     ],
-    "rename-appdata-file": "sayonara.appdata.xml",
+    "rename-appdata-file": "com.sayonara-player.Sayonara.appdata.xml",
     "rename-desktop-file": "com.sayonara-player.Sayonara.desktop",
     "rename-icon": "sayonara",
     "modules": [
@@ -35,8 +35,8 @@
             "name": "soundtouch",
             "sources": [
                 {
-                    "commit": "762f56024b7ade81f6565903161dffec0ad4741e",
-                    "tag": "2.2",
+                    "commit": "e83424d5928ab8513d2d082779c275765dee31b9",
+                    "tag": "2.3.3",
                     "type": "git",
                     "url": "https://codeberg.org/soundtouch/soundtouch.git"
                 }
@@ -62,8 +62,8 @@
             "name": "gstreamer",
             "sources": [
                 {
-                    "commit": "8dbfc89a850d484a27937eb882978251bfce06b3",
-                    "tag": "1.20.2",
+                    "commit": "c396e7da4c1f1c9a3666d62bd47af023fc984e37",
+                    "tag": "1.24.8",
                     "type": "git",
                     "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git"
                 }
@@ -93,15 +93,11 @@
             ],
             "sources": [
                 {
-                    "commit": "18e63ab31da929ebfa4d7f21791039997a567b49",
+                    "commit": "223884925b7d7bb96f9989e719d378e353c31543",
                     "type": "git",
                     "url": "https://gitlab.com/luciocarreras/sayonara-player.git",
-                    "tag": "1.7.0-stable3"
-                },
-                {
-                    "type": "patch",
-                    "path": "appid-naming-convention.patch"
-                }
+                    "tag": "1.10.0-stable1"
+                }   
             ]
         }
     ]
