@@ -1,7 +1,7 @@
 {
     "app-id": "com.sayonara_player.Sayonara",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-23.08",
+    "runtime-version": "5.15-24.08",
     "sdk": "org.kde.Sdk",
     "add-extensions": {
       "org.freedesktop.Platform.ffmpeg-full": {
@@ -31,55 +31,17 @@
     "rename-icon": "sayonara",
     "modules": [
         {
-            "buildsystem": "autotools",
             "name": "soundtouch",
             "sources": [
                 {
-                    "commit": "e83424d5928ab8513d2d082779c275765dee31b9",
-                    "tag": "2.3.3",
+                    "commit": "d994965fbbcf0f6ceeed0e72516968130c2912f0",
+                    "tag": "2.4.0",
                     "type": "git",
-                    "url": "https://codeberg.org/soundtouch/soundtouch.git"
-                }
-            ]
-        },
-        {
-            "config-opts": [
-                "--buildtype=release",
-                "-Ddoc=disabled",
-                "-Dexamples=disabled",
-                "-Dtests=disabled",
-                "-Dnls=disabled",
-                "-Dgobject-cast-checks=disabled",
-                "-Dglib-asserts=disabled",
-                "-Dglib-checks=disabled",
-                "-Dbase=enabled",
-                "-Dgood=enabled",
-                "-Dbad=enabled",
-                "-Dugly=enabled",
-                "-Dlibav=enabled"
-            ],
-            "buildsystem": "meson",
-            "name": "gstreamer",
-            "sources": [
-                {
-                    "commit": "c396e7da4c1f1c9a3666d62bd47af023fc984e37",
-                    "tag": "1.24.8",
-                    "type": "git",
-                    "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git"
-                }
-            ]
-        },
-        {
-            "config-opts": [
-                "-DBUILD_SHARED_LIBS=ON"
-            ],
-            "name": "taglib",
-            "buildsystem": "cmake-ninja",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://taglib.github.io/releases/taglib-1.11.1.tar.gz",
-                    "sha256": "b6d1a5a610aae6ff39d93de5efd0fdc787aa9e9dc1e7026fa4c961b26563526b"
+                    "url": "https://codeberg.org/soundtouch/soundtouch.git",
+                    "x-checker-data": {
+			    "type": "git",
+			    "tag-pattern": "^([\\d.]+)$"
+			}
                 }
             ]
         },
@@ -88,15 +50,18 @@
             "buildsystem": "cmake-ninja",
             "builddir": true,
             "config-opts": [
-                "-DCMAKE_INSTALL_PREFIX=/app",
                 "-DCMAKE_BUILD_TYPE=Release"
             ],
             "sources": [
                 {
-                    "commit": "223884925b7d7bb96f9989e719d378e353c31543",
+                    "commit": "b39e7fabed88ddbfd3ce8e72d942f8b54a6f356d",
                     "type": "git",
                     "url": "https://gitlab.com/luciocarreras/sayonara-player.git",
-                    "tag": "1.10.0-stable1"
+                    "tag": "1.11.0-stable2",
+                    "x-checker-data": {
+			    "type": "git",
+			    "tag-pattern": "^([\\d.]+)-stable[\\d]+$"
+			}
                 }   
             ]
         }
