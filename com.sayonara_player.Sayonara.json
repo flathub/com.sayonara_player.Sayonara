@@ -93,10 +93,10 @@
             ],
             "sources": [
                 {
-                    "commit": "223884925b7d7bb96f9989e719d378e353c31543",
+                    "commit": "b39e7fabed88ddbfd3ce8e72d942f8b54a6f356d",
                     "type": "git",
                     "url": "https://gitlab.com/luciocarreras/sayonara-player.git",
-                    "tag": "1.10.0-stable1"
+                    "tag": "1.11.0-stable1"
                 }   
             ]
         }
