@@ -1,0 +1,13 @@
+diff --git a/resources/com.sayonara-player.Sayonara.appdata.xml.in b/resources/com.sayonara-player.Sayonara.appdata.xml.in
+index c1de7df8..3da415fb 100644
+--- a/resources/com.sayonara-player.Sayonara.appdata.xml.in
++++ b/resources/com.sayonara-player.Sayonara.appdata.xml.in
+@@ -12,7 +12,7 @@
+ 		<project_license>GPL-3.0+</project_license>
+ 		<releases>
+ 			<release version="@SAYONARA_FULL_VERSION@" date="@APPSTREAM_BUILD_DATE@">
+-				<description>See release notes on https://sayonara-player.com/changelog</description>
++				<description><p>See release notes on https://sayonara-player.com/changelog</p></description>
+ 				<issues>
+ 					<issue url="https://gitlab.com/luciocarreras/sayonara-player">Search or file in issue reports at Gitlab</issue>
+ 				</issues>
