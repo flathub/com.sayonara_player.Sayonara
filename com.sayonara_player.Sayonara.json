@@ -44,20 +44,14 @@
         },
         {
             "config-opts": [
-                "--buildtype=release",
-                "-Ddoc=disabled",
-                "-Dexamples=disabled",
-                "-Dtests=disabled",
-                "-Dnls=disabled",
-                "-Dintrospection=disabled",
-                "-Dgobject-cast-checks=disabled",
-                "-Dglib-asserts=disabled",
-                "-Dglib-checks=disabled",
                 "-Dbase=enabled",
                 "-Dgood=enabled",
-                "-Dbad=enabled",
                 "-Dugly=enabled",
-                "-Dlibav=enabled"
+                "-Dbad=enabled",
+                "-Dlibav=enabled",
+                "-Dgst-libav:ffmpeg=disabled", 
+                "-Dtools=disabled",
+                "-Dtests=disabled"
             ],
             "buildsystem": "meson",
             "name": "gstreamer",
