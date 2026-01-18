@@ -4,9 +4,9 @@
     "runtime-version": "5.15-25.08",
     "sdk": "org.kde.Sdk",
     "add-extensions": {
-      "org.freedesktop.Platform.ffmpeg-full": {
-        "directory": "lib/ffmpeg",
-        "version": "24.08",
+      "org.freedesktop.Platform.GStreamer.extra": {
+        "directory": "lib/extensions/gstreamer-1.0",
+        "version": "25.08",
         "add-ld-path": "."
       }
     },
@@ -15,6 +15,7 @@
     ],  
     "command": "sayonara",
     "finish-args": [
+        "--env=GST_PLUGIN_SYSTEM_PATH=/app/lib/gstreamer-1.0:/usr/lib/extensions/gstreamer-1.0:/usr/lib/x86_64-linux-gnu/gstreamer-1.0",
         "--share=ipc",
         "--socket=x11",
         "--socket=pulseaudio",
@@ -39,34 +40,6 @@
                     "tag": "2.3.3",
                     "type": "git",
                     "url": "https://codeberg.org/soundtouch/soundtouch.git"
-                }
-            ]
-        },
-        {
-            "config-opts": [
-                "--buildtype=release",
-                "-Ddoc=disabled",
-                "-Dexamples=disabled",
-                "-Dtests=disabled",
-                "-Dnls=disabled",
-                "-Dintrospection=disabled",
-                "-Dgobject-cast-checks=disabled",
-                "-Dglib-asserts=disabled",
-                "-Dglib-checks=disabled",
-                "-Dbase=enabled",
-                "-Dgood=enabled",
-                "-Dbad=enabled",
-                "-Dugly=enabled",
-                "-Dlibav=enabled"
-            ],
-            "buildsystem": "meson",
-            "name": "gstreamer",
-            "sources": [
-                {
-                    "commit": "f313fae193089408e278c0dd3450145e5a12307b",
-                    "tag": "1.26.9",
-                    "type": "git",
-                    "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git"
                 }
             ]
         },
