@@ -24,7 +24,8 @@
         "--talk-name=org.mpris.MediaPlayer2.Player",
         "--own-name=org.mpris.MediaPlayer2.sayonara",
         "--talk-name=org.kde.StatusNotifierWatcher",    
-        "--device=all"
+        "--device=all",
+        "--env=GST_PLUGIN_PATH=/app/lib/ffmpeg/lib/gstreamer-1.0"
     ],
     "rename-appdata-file": "com.sayonara-player.Sayonara.appdata.xml",
     "rename-desktop-file": "com.sayonara-player.Sayonara.desktop",
