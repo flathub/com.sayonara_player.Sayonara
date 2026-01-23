@@ -3,19 +3,9 @@
     "runtime": "org.kde.Platform",
     "runtime-version": "5.15-25.08",
     "sdk": "org.kde.Sdk",
-    "add-extensions": {
-      "org.freedesktop.Platform.GStreamer.extra": {
-        "directory": "lib/extensions/gstreamer-1.0",
-        "version": "25.08",
-        "add-ld-path": "."
-      }
-    },
-    "cleanup-commands": [
-        "mkdir -p /app/lib/ffmpeg"
-    ],  
     "command": "sayonara",
     "finish-args": [
-        "--env=GST_PLUGIN_SYSTEM_PATH=/app/lib/gstreamer-1.0:/usr/lib/extensions/gstreamer-1.0:/usr/lib/x86_64-linux-gnu/gstreamer-1.0",
+        "--env=GST_PLUGIN_SYSTEM_PATH=/app/lib/gstreamer-1.0:/usr/lib/extensions/codecs-extra/lib/gstreamer-1.0:/usr/lib/x86_64-linux-gnu/gstreamer-1.0",
         "--share=ipc",
         "--socket=x11",
         "--socket=pulseaudio",
