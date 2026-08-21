@@ -7,8 +7,6 @@ sdk: org.kde.Sdk
 command: sayonara
 finish-args:
   - --share=ipc
-  - --socket=wayland
-  - --socket=fallback-x11
   # add x11 in order to test if the icon is shown correctly
   - --socket=x11
   - --socket=pulseaudio
