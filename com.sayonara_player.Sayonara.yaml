@@ -1,0 +1,81 @@
+app-id: com.sayonara_player.Sayonara
+runtime: org.kde.Platform
+# qt 5 needed for sayonara
+# qt6 migration: https://gitlab.com/luciocarreras/sayonara-player/-/merge_requests/455
+runtime-version: 5.15-25.08
+sdk: org.kde.Sdk
+command: sayonara
+finish-args:
+  - --share=ipc
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --socket=pulseaudio
+  # access media information, radio stations, ....
+  - --share=network
+  # local music library can be stored locally, on shares, ....
+  - --filesystem=xdg-music
+  - --filesystem=xdg-download
+  - --filesystem=xdg-run/gvfsd
+  - --filesystem=xdg-run/gvfs
+  - --filesystem=/media
+  - --filesystem=/run/media
+  - --filesystem=/mnt
+  - --talk-name=org.gtk.vfs.*
+  # mpris and notifications
+  - --talk-name=org.freedesktop.Notifications
+  - --own-name=org.mpris.MediaPlayer2.sayonara
+  - --talk-name=org.kde.StatusNotifierWatcher
+
+# rename files
+rename-appdata-file: com.sayonara-player.Sayonara.appdata.xml
+rename-desktop-file: com.sayonara-player.Sayonara.desktop
+rename-icon: sayonara
+
+modules:
+  - name: soundtouch
+    buildsystem: autotools
+    sources:
+      - commit: 0047e0b1ecfceb041348579119bf79b73a322a3a
+        type: git
+        url: https://codeberg.org/soundtouch/soundtouch.git
+        tag: 2.4.1
+
+  # fixes Error: testAndError: Engine: Cannot create element '' of type 'pitch'
+  - name: missing-gst-plugins
+    buildsystem: meson
+    config-opts:
+      - -Dauto_features=disabled
+      - -Dbase=enabled
+      - -Dbad=enabled
+      - -Dgst-plugins-bad:soundtouch=enabled
+      - -Dgst-plugins-bad:auto_features=disabled
+      - -Dtests=disabled
+      - -Dexamples=disabled
+      - -Ddoc=disabled
+      - -Dgtk_doc=disabled
+      - -Dintrospection=disabled
+      - -Ddevtools=disabled
+      - -Dges=disabled
+      - -Dlibav=disabled
+      - -Dugly=disabled
+      - -Drtsp_server=disabled
+      - -Dpython=disabled
+      - -Dsharp=disabled
+    sources:
+      - commit: f313fae193089408e278c0dd3450145e5a12307b
+        type: git
+        url: https://gitlab.freedesktop.org/gstreamer/gstreamer.git
+        tag: "1.26.9"
+        disable-submodules: true
+
+  - name: sayonara
+    buildsystem: cmake-ninja
+    builddir: true
+    config-opts:
+      - -DCMAKE_INSTALL_PREFIX=/app
+      - -DCMAKE_BUILD_TYPE=Release
+    sources:
+      - commit: f9cd12c227af2709801776781b60f4e603edd4d5
+        type: git
+        url: https://gitlab.com/luciocarreras/sayonara-player.git
+        tag: 1.12.0-stable1
