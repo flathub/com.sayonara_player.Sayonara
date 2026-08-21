@@ -23,7 +23,6 @@ finish-args:
   - --talk-name=org.gtk.vfs.*
   # mpris and notifications
   - --talk-name=org.freedesktop.Notifications
-  - --talk-name=org.mpris.MediaPlayer2.Player
   - --own-name=org.mpris.MediaPlayer2.sayonara
   - --talk-name=org.kde.StatusNotifierWatcher
 
@@ -42,7 +41,7 @@ modules:
         tag: 2.4.1
 
   # fixes Error: testAndError: Engine: Cannot create element '' of type 'pitch'
-  - name: gst-plugins-bad-soundtouch
+  - name: missing-gst-plugins
     buildsystem: meson
     config-opts:
       - -Dauto_features=disabled
