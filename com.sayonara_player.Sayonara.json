@@ -43,14 +43,10 @@
             ],
             "sources": [
                 {
-                    "commit": "b39e7fabed88ddbfd3ce8e72d942f8b54a6f356d",
+                    "commit": "f9cd12c227af2709801776781b60f4e603edd4d5",
                     "type": "git",
                     "url": "https://gitlab.com/luciocarreras/sayonara-player.git",
-                    "tag": "1.11.0-stable1"
-                },
-                {
-                    "type": "patch",
-                    "path": "appdataxml-description.patch"
+                    "tag": "1.12.0-stable1"
                 }
             ]
         }
