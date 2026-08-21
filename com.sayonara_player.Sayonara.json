@@ -5,7 +5,6 @@
     "sdk": "org.kde.Sdk",
     "command": "sayonara",
     "finish-args": [
-        "--env=GST_PLUGIN_SYSTEM_PATH=/app/lib/gstreamer-1.0:/usr/lib/extensions/codecs-extra/lib/gstreamer-1.0:/usr/lib/x86_64-linux-gnu/gstreamer-1.0",
         "--share=ipc",
         "--socket=wayland",
         "--socket=fallback-x11",
@@ -13,6 +12,8 @@
         "--share=network",
         "--filesystem=xdg-music",
         "--filesystem=xdg-download",
+        "--filesystem=xdg-run/gvfsd",
+        "--filesystem=xdg-run/gvfs",
         "--filesystem=/media",
         "--filesystem=/run/media",
         "--filesystem=/mnt",
@@ -20,7 +21,6 @@
         "--talk-name=org.mpris.MediaPlayer2.Player",
         "--own-name=org.mpris.MediaPlayer2.sayonara",
         "--talk-name=org.kde.StatusNotifierWatcher",
-        "--talk-name=org.gtk.vfs",
         "--talk-name=org.gtk.vfs.*",
         "--device=dri"
     ],
